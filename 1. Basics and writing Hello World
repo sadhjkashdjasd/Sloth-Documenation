@@ -1,7 +1,7 @@
 Okey. So, you installed my lang named Sloth.
 Maybe you don't know anything -bout my lang...
 But you here, cuz you want to start knowing!
-Before we start, make sure you added sloth to path and installed it. Also make sure you are using Sloth 1.0 - 1.3.
+Before we start, make sure you added sloth to path and installed it. Also make sure you are using Sloth 1.15 and newer.
 
 WEl, first you need to know the structure of programm on sloth. It hasn't some specials like pascal. The ouput doing via "out" funciton.
 The out function outputing first arg (with index 0(args[0]). So to create arg you should to use this things "()".
@@ -19,42 +19,36 @@ Okey now im trying to launch it (you too pls.)
 
 You see it?
 Yes, finnaly we made your first sloth program. Now let's add some vars.
-In my lang vars declaring by "let" like this
+In my lang vars declaring by "var" like this
 
-  let (    ) (    ) (   );
-        ^      ^      ^
-        |      |      |
-variable name  |       --- value.
-               |
-               |
-type -----------
+  var (    &      );
+        ^  ^    ^
+        |  +----+------------- split symbol
+variable name   --- value.
+
+*Note: In Sloth 1.1 and Sloth 1.0 variables was declaring by let and you needed to declare it with type.
 
 Name can be whatever you want (except some names).
-Type: type can be one of five (int, string, bool, float, list)
-the value MUST match the type. You can't
-  
-  let (xd)(int)(some_text);
-
-The error:
-  [!] Error: The variable "xd" has invalid value "some_text" for type int
-For text you should you it:
-  let (xd)(string)(some_text);
+the value can be any (except some values like input).
+Example:
+var(xd&<input>)
 
 Okey, so let's try to make the programm that output is:
   Input your name: Developer of Sloth
   Hello, Developer of Sloth!
 First that we need is asking "Input your name:". We can do this by out command (you know how to do that)
+
   out("Input your name: ");
+  
 Okey, so, how to handle input of user?
 you need to use integrators. It's var name with <>. To handle input use "<input>". You can apply to command whatever you want.
 
-  let(name)(string)(<input>);
-       ^      ^       ^
-       |      |       |
-variable name |        --- variable value
-              |
-              |
-variable type-
+  var(name&<input>);
+       ^      ^
+       |      +-------+
+variable name         |
+                       --- variable value
+
 
 Now if we run code we can get:
 
@@ -68,9 +62,10 @@ Now we just need to add line with output. You probably know how to do it using i
              |    ----+---- variable integrator.
          command arg  |
                        ---- the return symbol
+                       
  So, now our full code is:
   out("Input your name: ");
-  let(name)(string)(<input>);
+  var(name&<input>);
   out(Hello, <name><endl>);
 If you run it you can get:
   Input your name: The developer of sloth
