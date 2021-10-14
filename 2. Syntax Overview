@@ -1,0 +1,108 @@
+HenlO! i hope you understood the first lesson (https://github.com/sadhjkashdjasd/Sloth-Documenation/blob/main/1.%20Basics%20and%20writing%20Hello%20World).
+Now im going yo explain syntax of sloth. It's not hard but you should to know how to use it. It will be very helpfull to solve some "hard" errors. The forgotten ";" can call many
+errors.
+
+Okey, so first the '()' placing.
+The ( using for start declaring arg. (out();). The ) is for stopping declaring arg. Almost every command tooks at least one arg (except selfmade).
+
+Quotes ("") placing.
+Often " using for declaring string, but string can be declared without it. It needs to ignore stopping symbols. Look:
+
+out(Hi!());
+output: Hi!(
+
+Now add "":
+
+out("Hi!()");
+output: Hi!()
+
+So now you understood for what it, right?
+*Note: "" is not working inside {} in sloth 1.15 and lower. Let me know why:
+
+The {} symbols often using for declaring functions, conditions etc. BUT! the { == (". So every code is string. That's why
+" not woking inside {}. So you can user
+
+out{Hi!()}
+output: Hi!()
+
+Inside {} "" just ignoring, but not calls error. Btw idk why it happens.
+
+Example:
+func (test) {
+};
+func (test) ("
+");
+
+both codes declaring function.
+
+Explaining semicolong:
+You need to put ";" on every statement end, except inside {}. What if to do it?
+
+func (test) {
+out("hello");
+};
+F:\SlothTutorials\Intro>sloth
+[!] Error: The "def" command takes 2 args (or more), not 1
+
+The right way is 
+func (test) {
+out("hello")
+};
+
+How to place ";"?
+you need to place it on every full statement end. look at example:
+out("deb");
+func (test) {
+out("henlo")
+};
+
+call () (test);
+
+If you don't place ; on end of full statement it's often not gives an error. It's just ignoring next commands.
+
+Comments:
+the comments is ignorable text by parser. Nothing to explain. Just look:
+// out("hi");
+out("hlo");
+output:F:\SlothTutorials\Intro>sloth
+hlo
+
+The comment can has any text.
+
+The argument syntax:
+Often args splits on (), but sometimes on space or &. I tred to make it logical.
+Mostly old commands has syntax like:
+time(sleep)(1<int>);
+I would reformat it to
+time(do sleep&1<int>);
+i like it more.
+
+*Note: if you think the syntax is ugly, look at first sloth's syntax:
+use pygame.;
+use functions.;
+let window_size <blank> list.;
+set window_size 640 0.;
+set window_size 480 1.;
+let True True bool.;
+pygame:window set_caption Hello<comma><space>sloth!.;
+pygame:window set_size <window_size[0]> <window_size[1]>.;
+let player_pos <blank> list.;
+set player_pos 0 0.;
+set player_pos 0 1.;
+let px 0 int.;
+
+function create game_loop.;
+function:add pygame<s>window<s>fill<s>0<s>0<s>0<d> game_loop.;
+function:add function<s>call<s>if<s><__pygame__keys__><s>==<s><K_D><s><blank><s>sum<s><px><s>5<d> game_loop.;
+function:add function<s>call<s>if<s><__pygame__keys__><s>==<s><K_A><s><blank><s>sum<s><px><s>-5<d> game_loop.;
+function:add set<s>px<s><returned><d> game_loop.;
+function:add pygame<s>draw<s>rect<s>255<s>255<s>255<s><px><s><player_pos[1]><s>128<s>128<d> game_loop.;
+function:add pygame<s>update_events<d> game_loop.;
+function:add quit<s>if<s><__pygame__quited__><s>==<s><True><d> game_loop.;
+function:add quit<s>if<s><__pygame__keys__><s>==<s><ALT+F4><d> game_loop.;
+function:add pygame<s>window<s>update<d> game_loop.;
+
+function:call 9999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999 game_loop.;
+yeah yeha it's very hard even for me.
+
+I hope you understood everything. Pls star if you liked it. Thanks for reading! Good luck! bye-bye
